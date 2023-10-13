@@ -82,7 +82,7 @@ for i in range((current_year - min_year) + 1):
         
         for column in num_cols:
             df[column] = df[column].astype(str)
-            df[column] = df[column].str.replace(r'[^0-9]', '', regex=True)
+            df[column] = df[column].str.replace(r'[^0-9\.]', '', regex=True)
     
         df[num_cols] = df[num_cols].apply(pd.to_numeric, errors='coerce')
         
